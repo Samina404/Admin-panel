@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings | Aura Hotel Admin</title>
+    <!-- CSS Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260313">
+    <style>
+        .settings-card-premium {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .settings-card-header-custom {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .settings-card-title-custom {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0;
+        }
+
+        .form-label-custom {
+            font-size: 15px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-control-custom {
+            background-color: #ffffff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 16px;
+            color: #111827;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .form-control-custom:focus {
+            outline: none;
+            border-color: #009689;
+            box-shadow: 0 0 0 4px rgba(0, 150, 137, 0.1);
+        }
+
+        .upload-logo-area-new {
+            border: 1.5px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .upload-logo-area-new:hover {
+            border-color: #009689;
+            background: #f0fdfa;
+        }
+
+        .social-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .social-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0;
+        }
+
+        .social-input-group, .input-with-icon {
+            position: relative;
+        }
+
+        .social-input-group .bi, .social-input-group [data-lucide],
+        .input-with-icon [data-lucide] {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        .social-input-group .form-control-custom,
+        .input-with-icon .form-control-custom {
+            padding-left: 52px;
+        }
+
+        .social-toggle {
+            width: 50px;
+            height: 26px;
+            border-radius: 999px;
+            background: #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            padding: 3px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .social-toggle .toggle-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .social-toggle.active {
+            background: #009689;
+        }
+
+        .social-toggle.active .toggle-dot {
+            transform: translateX(24px);
+        }
+
+        .save-btn-premium {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 121, 107, 0.2);
+        }
+
+        .save-btn-premium:hover {
+            background-color: #00695c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 121, 107, 0.3);
+            color: white;
+        }
+
+        .settings-page-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <div class="bg-primary rounded-2 p-2 me-2 d-flex align-items-center justify-content-center"
+                    style="width: 36px; height: 36px;">
+                    <span class="text-white fw-bold h5 mb-0 font-serif">A</span>
+                </div>
+                <h5 class="mb-0 fw-bold">Aura Hotel</h5>
+            </div>
+
+            <div class="menu-label py-2">Main Menu</div>
+            <nav class="flex-grow-1">
+                <a href="index.html" class="nav-link">
+                    <i class="bi bi-grid-fill"></i> Dashboard
+                </a>
+                <a href="categories.html" class="nav-link">
+                    <i class="bi bi-tag"></i> Categories
+                </a>
+                <a href="rooms.html" class="nav-link">
+                    <i class="bi bi-door-open"></i> Room Management
+                </a>
+                <a href="bookings.html" class="nav-link">
+                    <i class="bi bi-calendar-event"></i> Booking management
+                </a>
+                <a href="gallery.html" class="nav-link">
+                    <i class="bi bi-images"></i> Gallery
+                </a>
+                <a href="settings.html" class="nav-link active">
+                    <i class="bi bi-gear"></i> Website Settings
+                </a>
+                <a href="users.html" class="nav-link">
+                    <i class="bi bi-people"></i> Users Management
+                </a>
+            </nav>
+
+            <div class="logout-container border-0 pb-4">
+                <a href="login.html" class="nav-link text-muted">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn d-lg-none" id="sidebar-toggle">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div class="search-box">
+                        <i data-lucide="search" style="width: 18px; color: #94a3b8;"></i>
+                        <input type="text" id="global-search" placeholder="Search everywhere...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="position-relative cursor-pointer p-2 rounded-circle hover-bg-light">
+                        <i data-lucide="bell" style="width: 20px; color: #64748b;"></i>
+                        <span class="position-absolute translate-middle p-1 bg-danger border border-light rounded-circle"
+                            style="top: 25%; left: 75%;">
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex align-items-center gap-3 ps-3 border-start">
+                        <img src="assets/img/profile.jpg" alt="profile" class="rounded-circle border"
+                            style="width: 40px; height: 40px; object-fit: cover;">
+                        <div class="text-start d-none d-sm-block">
+                            <p class="mb-0 fw-bold" style="font-size: 14px; color: #1e293b;">Asif Admin</p>
+                            <p class="mb-0 text-muted" style="font-size: 12px;">Super Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Body -->
+            <section class="p-4 p-lg-5">
+                <form id="settings-form">
+                    <header class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-5">
+                        <div>
+                            <h1 class="settings-page-title font-serif">Website Settings</h1>
+                            <p class="text-muted fw-medium mb-0" style="font-size: 16px;">Manage your hotel's general information and contact details</p>
+                        </div>
+                        <button type="submit" class="save-btn-premium">
+                            <i data-lucide="save" style="width: 20px; height: 20px;"></i>
+                            <span>Save Changes</span>
+                        </button>
+                    </header>
+
+                    <!-- Settings Sections Container -->
+                    <div class="settings-card-premium">
+                        <!-- General Information -->
+                        <div class="settings-card-header-custom">
+                            <i data-lucide="hotel" style="width: 28px; height: 28px; color: #009689;"></i>
+                            <h3 class="settings-card-title-custom">General Information</h3>
+                        </div>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Hotel Name</label>
+                                <input type="text" class="form-control-custom" value="Aura Hotel & Spa">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Tagline</label>
+                                <input type="text" class="form-control-custom" value="Experience Luxury at its finest">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-custom">About Hotel</label>
+                                <textarea class="form-control-custom" rows="5"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-custom">Choose Logo</label>
+                                <div class="upload-logo-area-new">
+                                    <div class="mb-3">
+                                        <i data-lucide="image" style="width: 48px; height: 48px; color: #94a3b8;"></i>
+                                    </div>
+                                    <p class="mb-1 fw-medium" style="color: #475569;">
+                                        <span style="color: #009689; font-weight: 700;">Upload a file</span> or drag and drop
+                                    </p>
+                                    <p class="text-muted mb-0" style="font-size: 13px;">PNG, JPG, GIF up to 10MB</p>
+                                    <input type="file" class="d-none" id="logo-upload">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-5" style="border-top: 1px solid #e5e7eb; opacity: 1;">
+
+                        <!-- Contact Information -->
+                        <div class="settings-card-header-custom">
+                            <i data-lucide="phone-call" style="width: 28px; height: 28px; color: #009689;"></i>
+                            <h3 class="settings-card-title-custom">Contact Information</h3>
+                        </div>
+                        
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Email Address</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+                                    <input type="email" class="form-control-custom" value="info@aurahotel.com">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Phone Number</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+                                    <input type="text" class="form-control-custom" value="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-custom">WhatsApp Number</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+                                    <input type="text" class="form-control-custom" value="+1 (555) 987-6543">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label-custom">Physical Address</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                                    <input type="text" class="form-control-custom">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label-custom">Address Link</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                                    <input type="text" class="form-control-custom">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-5" style="border-top: 1px solid #e5e7eb; opacity: 1;">
+
+                        <!-- Social Media Links -->
+                        <div class="settings-card-header-custom">
+                            <i data-lucide="globe" style="width: 28px; height: 28px; color: #009689;"></i>
+                            <h3 class="settings-card-title-custom">Social Media Links</h3>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="social-group">
+                                    <label class="social-label">Instagram URL</label>
+                                    <div class="social-toggle active" role="button">
+                                        <div class="toggle-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="social-input-group">
+                                    <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+                                    <input type="url" class="form-control-custom" value="https://instagram.com/aurahotel">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="social-group">
+                                    <label class="social-label">Facebook URL</label>
+                                    <div class="social-toggle active" role="button">
+                                        <div class="toggle-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="social-input-group">
+                                    <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
+                                    <input type="url" class="form-control-custom" value="https://facebook.com/aurahotel">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="social-group">
+                                    <label class="social-label">Twitter/X URL</label>
+                                    <div class="social-toggle active" role="button">
+                                        <div class="toggle-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="social-input-group">
+                                    <i data-lucide="twitter" style="width: 20px; height: 20px;"></i>
+                                    <input type="url" class="form-control-custom" value="https://twitter.com/aurahotel">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="social-group">
+                                    <label class="social-label">Tiktok URL</label>
+                                    <div class="social-toggle" role="button">
+                                        <div class="toggle-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="social-input-group">
+                                    <i data-lucide="music" style="width: 20px; height: 20px;"></i>
+                                    <input type="url" class="form-control-custom" placeholder="https://tiktok.com/@aurahotel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="p-4 text-center border-top mt-auto bg-white">
+                <p class="text-muted small mb-0 fw-medium">
+                    &copy; 2026 Admin Panel - AyraHotel. All rights reserved.
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- JS Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            $('#settings-form').on('submit', function(e) {
+                e.preventDefault();
+                // Custom notification instead of alert for premium feel
+                const btn = $(this).find('.save-btn-premium');
+                const originalHtml = btn.html();
+                btn.html('<i data-lucide="check-circle" style="width: 20px; height: 20px;"></i> <span>Saved!</span>');
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    btn.html(originalHtml);
+                    lucide.createIcons();
+                }, 2000);
+            });
+            
+            $('.upload-logo-area-new').on('click', function() {
+                $('#logo-upload').click();
+            });
+
+            $('.social-toggle').on('click', function() {
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
