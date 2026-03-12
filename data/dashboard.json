@@ -1,0 +1,303 @@
+{
+    "stats": {
+        "totalRooms": 156,
+        "totalBookings": 1248,
+        "availableRooms": 42,
+        "pendingBookings": 24
+    },
+    "chartData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+        "data": [45, 52, 68, 62, 75, 70, 88, 82, 95, 110]
+    },
+    "recentBookings": [
+        {
+            "id": "BKG-001",
+            "customer": "Sarah Johnson",
+            "roomType": "Deluxe Ocean View",
+            "checkIn": "Oct 24, 2023",
+            "status": "Confirmed",
+            "amount": 450
+        },
+        {
+            "id": "BKG-002",
+            "customer": "Michael Chen",
+            "roomType": "Standard Suite",
+            "checkIn": "Oct 25, 2023",
+            "status": "Pending",
+            "amount": 280
+        },
+        {
+            "id": "BKG-003",
+            "customer": "Emma Williams",
+            "roomType": "Presidential Suite",
+            "checkIn": "Oct 26, 2023",
+            "status": "Cancelled",
+            "amount": 1200
+        },
+        {
+            "id": "BKG-004",
+            "customer": "David Rodriguez",
+            "roomType": "Deluxe Garden View",
+            "checkIn": "Oct 27, 2023",
+            "status": "Confirmed",
+            "amount": 390
+        },
+        {
+            "id": "BKG-005",
+            "customer": "Jennifer Lee",
+            "roomType": "Junior Suite",
+            "checkIn": "Oct 28, 2023",
+            "status": "Confirmed",
+            "amount": 520
+        },
+        {
+            "id": "BKG-006",
+            "customer": "Robert Wilson",
+            "roomType": "Executive Suite",
+            "checkIn": "Oct 29, 2023",
+            "status": "Pending",
+            "amount": 820
+        },
+        {
+            "id": "BKG-007",
+            "customer": "Sophia Martinez",
+            "roomType": "Standard Twin",
+            "checkIn": "Oct 30, 2023",
+            "status": "Confirmed",
+            "amount": 210
+        },
+        {
+            "id": "BKG-008",
+            "customer": "James Taylor",
+            "roomType": "Presidential Villa",
+            "checkIn": "Oct 31, 2023",
+            "status": "Confirmed",
+            "amount": 1500
+        },
+        {
+            "id": "BKG-009",
+            "customer": "Linda Anderson",
+            "roomType": "Deluxe Room",
+            "checkIn": "Nov 01, 2023",
+            "status": "Pending",
+            "amount": 350
+        },
+        {
+            "id": "BKG-010",
+            "customer": "William Garcia",
+            "roomType": "Ocean Breeze Suite",
+            "checkIn": "Nov 02, 2023",
+            "status": "Confirmed",
+            "amount": 450
+        }
+    ],
+    "quickActions": [
+        {
+            "name": "Add New Room",
+            "icon": "rooms.svg",
+            "link": "rooms.html"
+        },
+        {
+            "name": "Add New Category",
+            "icon": "available.svg",
+            "link": "categories.html"
+        },
+        {
+            "name": "Update Settings",
+            "icon": "pending.svg",
+            "link": "#"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "image": "room-1.jpg",
+            "name": "Deluxe Ocean View",
+            "status": "Available"
+        },
+        {
+            "id": 2,
+            "image": "room-2.jpg",
+            "name": "Executive Suite",
+            "status": "Available"
+        },
+        {
+            "id": 3,
+            "image": "room-3.jpg",
+            "name": "Presidential Villa",
+            "status": "Not Available"
+        },
+        {
+            "id": 4,
+            "image": "room-4.jpg",
+            "name": "Standard Twin",
+            "status": "Available"
+        },
+        {
+            "id": 5,
+            "image": "room-5.jpg",
+            "name": "Junior Suite",
+            "status": "Available"
+        },
+        {
+            "id": 6,
+            "image": "room-1.jpg",
+            "name": "Garden View",
+            "status": "Available"
+        }
+    ],
+    "rooms": [
+        {
+            "id": 1,
+            "image": "room-1.jpg",
+            "name": "Ocean Breeze Suite",
+            "number": "RM-101",
+            "category": "Deluxe Ocean View",
+            "price": 450,
+            "status": "Available"
+        },
+        {
+            "id": 2,
+            "image": "room-2.jpg",
+            "name": "Sunset Horizon",
+            "number": "RM-102",
+            "category": "Deluxe Ocean View",
+            "price": 450,
+            "status": "Booked"
+        },
+        {
+            "id": 3,
+            "image": "room-3.jpg",
+            "name": "The Executive",
+            "number": "RM-201",
+            "category": "Executive Suite",
+            "price": 820,
+            "status": "Maintenance"
+        },
+        {
+            "id": 4,
+            "image": "room-4.jpg",
+            "name": "Classic Twin",
+            "number": "RM-205",
+            "category": "Standard Twin",
+            "price": 210,
+            "status": "Available"
+        },
+        {
+            "id": 5,
+            "image": "room-5.jpg",
+            "name": "Royal Villa",
+            "number": "RM-300",
+            "category": "Presidential Villa",
+            "price": 1200,
+            "status": "Available"
+        },
+        {
+            "id": 6,
+            "image": "room-1.jpg",
+            "name": "Garden Terrace",
+            "number": "RM-105",
+            "category": "Garden View",
+            "price": 320,
+            "status": "Available"
+        },
+        {
+            "id": 7,
+            "image": "room-2.jpg",
+            "name": "Skyline Suite",
+            "number": "RM-401",
+            "category": "Executive Suite",
+            "price": 950,
+            "status": "Booked"
+        },
+        {
+            "id": 8,
+            "image": "room-3.jpg",
+            "name": "Family Haven",
+            "number": "RM-210",
+            "category": "Standard Twin",
+            "price": 180,
+            "status": "Available"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "John Admin",
+            "role": "Super Admin",
+            "email": "admin@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 2,
+            "name": "Jane Manager",
+            "role": "Manager",
+            "email": "jane@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 3,
+            "name": "Bob Staff",
+            "role": "Staff",
+            "email": "bob@aurahotel.com",
+            "status": "Inactive"
+        },
+        {
+            "id": 4,
+            "name": "Alice Support",
+            "role": "Staff",
+            "email": "alice@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 5,
+            "name": "Charlie Executive",
+            "role": "Manager",
+            "email": "charlie@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 6,
+            "name": "David Auditor",
+            "role": "Staff",
+            "email": "david@aurahotel.com",
+            "status": "Inactive"
+        },
+        {
+            "id": 7,
+            "name": "Emily Parker",
+            "role": "Staff",
+            "email": "emily@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 8,
+            "name": "Noah Bennett",
+            "role": "Manager",
+            "email": "noah@aurahotel.com",
+            "status": "Active"
+        },
+        {
+            "id": 9,
+            "name": "Sophia Reed",
+            "role": "Staff",
+            "email": "sophia@aurahotel.com",
+            "status": "Inactive"
+        },
+        {
+            "id": 10,
+            "name": "Liam Carter",
+            "role": "Super Admin",
+            "email": "liam@aurahotel.com",
+            "status": "Active"
+        }
+    ],
+    "gallery": [
+        { "id": 1, "image": "room-1.jpg", "category": "Rooms" },
+        { "id": 2, "image": "room-2.jpg", "category": "Rooms" },
+        { "id": 3, "image": "room-3.jpg", "category": "Lobby" },
+        { "id": 4, "image": "room-4.jpg", "category": "Exterior" },
+        { "id": 5, "image": "room-5.jpg", "category": "Pool" },
+        { "id": 6, "image": "room-1.jpg", "category": "Restaurant" }
+    ]
+}
